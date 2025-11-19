@@ -1,0 +1,150 @@
+@font-face {
+  font-family: chillax;
+  src: url("63cffc0a3942456e003bc265_Chillax-Regular.woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: chillax;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  color: white;
+}
+body {
+  background-color: rgb(9, 9, 9);
+}
+
+.page-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.6rem;
+    gap: 1rem;
+    max-width: 2000px;
+  }
+
+  .top {
+    width: 100%;
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+  .bottom {
+    border-radius: 10px;
+    max-height: 981px;
+    background-color: rgb(32, 32, 32);
+    padding: 5.3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .text {
+    h1 {
+      font-weight: 200;
+      text-transform: uppercase;
+      font-size: 10vw;
+      line-height: 5rem;
+    }
+    p {
+      margin-top: 1vh;
+      color: rgb(158, 158, 158);
+      font-size: 4.5vw;
+      line-height: 3rem;
+    }
+    button {
+      margin-top: 1vh;
+      padding: 1.6vw 2.7vw;
+      font-size: 4vw;
+      border-radius: 6px;
+    }
+  }
+}
+
+// responsive for large screens
+
+@media (min-width: 900px) {
+  main {
+    section {
+      flex-direction: row;
+    }
+    .top {
+      width: 50%;
+    }
+    .bottom {
+      width: 50%;
+      padding: 4vw;
+      gap: 25vh;
+    }
+
+    .text {
+      h1 {
+        font-weight: 100;
+        font-size: 4vw;
+        line-height: 5rem;
+        color: rgb(215, 215, 215);
+      }
+      p {
+        margin-top: 1vh;
+        color: rgb(158, 158, 158);
+        font-size: 1.3vw;
+        line-height: 3vh;
+      }
+      button {
+        margin-top: 8vh;
+        padding: 0.6vw 1.7vw;
+        font-size: 1vw;
+        border-radius: 6px;
+        background-color: rgb(230, 230, 230);
+      }
+    }
+  }
+}
+
+// Fix for 4K and ultra-wide screens
+@media (min-width: 1920px) {
+  main {
+    .bottom {
+      padding: 80px;
+      gap: 200px;
+    }
+
+    .text {
+      h1 {
+        font-size: clamp(48px, 3vw, 80px);
+        line-height: clamp(60px, 9vh, 120px);
+      }
+      p {
+        font-size: clamp(18px, 1.3vw, 28px);
+        line-height: clamp(24px, 6vh, 40px);
+      }
+      button {
+        padding: clamp(8px, 0.6vw, 16px) clamp(16px, 1.7vw, 32px);
+        font-size: clamp(14px, 1vw, 20px);
+      }
+    }
+  }
+}
